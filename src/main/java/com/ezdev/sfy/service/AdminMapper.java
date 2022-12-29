@@ -65,9 +65,9 @@ public class AdminMapper {
 		int[] unionList = new int[7]; // 모든 값 합칠 곳
 		
 		// 이번주
-		for(int i=0; i>-7; --i) {
+		for(int i=6; i>-1; --i) {
 			sql = "select count(*) as \"" + i +"\" from review" + 
-				 	" where date_format(date_sub(now(), interval (weekday(now()) + \"" + i + "\")day), '%y-%m-%d') = date_format(review_regdate, '%y-%m-%d')";
+				 	" where date_format(date_sub(now(), interval (weekday(now()) - \"" + i + "\")day), '%y-%m-%d') = date_format(review_regdate, '%y-%m-%d')";
 			
 			map.put("sql", sql);
 			
@@ -75,8 +75,9 @@ public class AdminMapper {
 			result = sqlSession.selectList("countReviewByWeek", map);
 			resultMap = (Map<String, Object>) result.get(0); //{7=0, 5=1, ... -5=1, -6=0}
 			
+			System.out.println(resultMap);
 			// 값만 배열에 저장하기
-			unionList[i+6] = ((Long) resultMap.get(String.valueOf(i))).intValue(); // [0, 1, ... 1, 0]			
+			unionList[i] = ((Long) resultMap.get(String.valueOf(i))).intValue(); // [0, 1, ... 1, 0]			
 		}
 
 		return unionList;
@@ -104,8 +105,8 @@ public class AdminMapper {
 	}
 
 
-	public int adminDelete(AdminDTO dto) {
-		int res = sqlSession.delete("adminDelete", dto);
+	public int adminDelete(int admin_no) {
+		int res = sqlSession.delete("adminDelete", admin_no);
 		return res;
 	}
 

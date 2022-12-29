@@ -29,7 +29,7 @@ update admin set admin_name=#{admin_name}, admin_id=#{admin_id},
 admin_passwd=#{admin_passwd},admin_email=#{admin_email}, admin_profileImg=#{admin_profileImg} where admin_no=#{admin_no}
 </update>
 
-<delete id="adminDelete" parameterType="adminDTO">
+<delete id="adminDelete" parameterType="Integer">
 delete from admin where admin_no = #{admin_no}
 </delete>
 

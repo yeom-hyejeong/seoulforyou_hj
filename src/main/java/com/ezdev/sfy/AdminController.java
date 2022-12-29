@@ -366,8 +366,9 @@ public class AdminController {
 		return "message";
 	}
 	@RequestMapping("/admin_delete.do")
-	public String adminDelete(HttpServletRequest req, @ModelAttribute AdminDTO dto) {
-		int res = adminMapper.adminDelete(dto);
+	public String adminDelete(HttpServletRequest req, @RequestParam(required=false)int admin_no) {
+		System.out.println(admin_no);
+		int res = adminMapper.adminDelete(admin_no);
 		
 		if(res>0) {
 			req.setAttribute("msg", "관리자 정보 삭제 완료");

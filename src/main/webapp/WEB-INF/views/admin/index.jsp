@@ -335,8 +335,8 @@ memberChart.update();
       datas.push(num);
    	</c:forEach>
  
+ 
  var dataset = reviewChart.data.datasets;
-
  for(var i=0; i<dataset.length; i++){
 	//데이터 갯수 만큼 반복
 	var data = dataset[i].data;

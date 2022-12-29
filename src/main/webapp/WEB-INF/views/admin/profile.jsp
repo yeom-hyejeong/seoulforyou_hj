@@ -11,6 +11,7 @@
 <body>
 	
 	<form method="post" enctype="multipart/form-data">
+	<input type="hidden" id="admin_no" value="${getAdmin.admin_no} ">
     <div class="container-fluid px-4">
      <h1 class="mt-4 ">프로필 수정</h1><br>
        <div class="card mb-5"></div>
