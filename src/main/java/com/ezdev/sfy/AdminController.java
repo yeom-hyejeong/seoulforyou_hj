@@ -367,7 +367,6 @@ public class AdminController {
 	}
 	@RequestMapping("/admin_delete.do")
 	public String adminDelete(HttpServletRequest req, @RequestParam(required=false)int admin_no) {
-		System.out.println(admin_no);
 		int res = adminMapper.adminDelete(admin_no);
 		
 		if(res>0) {

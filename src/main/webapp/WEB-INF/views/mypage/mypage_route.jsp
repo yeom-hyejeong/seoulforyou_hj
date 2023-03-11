@@ -222,8 +222,10 @@ a {
 				$('#subject').text(subject);
 				$('#content').text(content);
 				$('#hashtag').text("#"+hashtag);
-				$('#delModalForm').attr("action", "myroute_delRoute.do?route_no="+no);
-				$('#main_image').attr("src", "https://ezdev-sfy.s3.ap-northeast-2.amazonaws.com/route/"+img);
+				$('#delModalForm').attr("action", 
+						"myroute_delRoute.do?route_no="+no);
+				$('#main_image').attr("src", 
+					"https://ezdev-sfy.s3.ap-northeast-2.amazonaws.com/route/"+img);
 				setList(route);
 							
 			})

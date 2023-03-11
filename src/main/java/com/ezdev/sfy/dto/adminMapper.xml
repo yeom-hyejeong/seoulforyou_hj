@@ -30,8 +30,7 @@ admin_passwd=#{admin_passwd},admin_email=#{admin_email}, admin_profileImg=#{admi
 </update>
 
 <delete id="adminDelete" parameterType="Integer">
-delete from admin where admin_no = #{admin_no}
-</delete>
+delete from admin where admin_no = #{admin_no}</delete>
 
 <insert id="adminEmail" parameterType="emailDTO">
 insert into email values(#{senderName}, #{senderMail}, #{receiveMail}, #{subject}, #{message})

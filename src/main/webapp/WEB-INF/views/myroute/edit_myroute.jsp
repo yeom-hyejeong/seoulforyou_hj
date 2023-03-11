@@ -261,7 +261,7 @@
 					<option value="5" <c:if test="${searchType=='5'}">selected</c:if>>숙소</option>
 				</select>
 					<input type="text" class="ms-2" name="keyword" style="width:200px; height:36px">
-					<button class="btn btn-outline-success btn-sm ms-2" style="width:80px;height:36px" type="submit" formaction="tourFind.do">GO!</button>
+					<button class="btn btn-outline-success btn-sm ms-2" style="width:80px;height:36px" type="submit" formaction="edit_tourFind.do">GO!</button>
 			</div>
 			</div>
 			<hr>
