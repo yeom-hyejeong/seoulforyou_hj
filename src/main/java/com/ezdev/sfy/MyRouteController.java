@@ -224,7 +224,7 @@ public class MyRouteController {
 		// after페이지의 content와 subject를 dto에 넣기
 		dto.setRoute_subject(afterMap.get("route_subject"));
 		dto.setRoute_content(afterMap.get("route_content"));
-		System.out.println((String) session.getAttribute("hashtag"));
+		
 		// 앞 페이지의 hashtag, itinerary, region을 dto에 넣기
 		String itinerary = (String) session.getAttribute("startDate") + '~' + (String) session.getAttribute("endDate");
 		String hashtag = (String) session.getAttribute("hashtag");
